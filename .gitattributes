@@ -1,10 +1,10 @@
 # Explicitly specify Dart as the main language
 *.dart linguist-language=Dart
 
-# Exclude other languages from detection
-*.c linguist-detectable=false
+# Exclude or demote other languages
 *.cpp linguist-detectable=false
 *.h linguist-detectable=false
+*.c linguist-detectable=false
 *.m linguist-detectable=false
 *.mm linguist-detectable=false
 *.swift linguist-detectable=false
@@ -12,3 +12,7 @@
 *.kt linguist-detectable=false
 CMakeLists.txt linguist-detectable=false
 *.cmake linguist-detectable=false
+
+# Mark the directories or files that should not be counted
+build/ linguist-detectable=false
+*.pbxproj linguist-detectable=false
