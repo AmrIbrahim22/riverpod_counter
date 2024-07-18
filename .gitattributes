@@ -12,7 +12,3 @@
 *.kt linguist-detectable=false
 CMakeLists.txt linguist-detectable=false
 *.cmake linguist-detectable=false
-
-# Mark the directories or files that should not be counted
-build/ linguist-detectable=false
-*.pbxproj linguist-detectable=false
