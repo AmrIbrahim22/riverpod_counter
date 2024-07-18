@@ -1,28 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_counter/provider.dart';
 
 void main() {
   runApp(const ProviderScope(child: MainApp()));
 }
 
-extension OptionalAddInfixOperator<T extends num> on T? {
-  T? operator +(T? other) {
-    final shadow = this;
-    if (shadow != null) {
-      return shadow + (other ?? 0) as T;
-    } else {
-      return null;
-    }
-  }
-}
 
-class CounterNotifier extends StateNotifier<int?> {
-  CounterNotifier() : super(null);
-  void increment() => state = state == null ? 0 : state + 1;
-}
-
-final counterProvider =
-    StateNotifierProvider<CounterNotifier, int?>((ref) => CounterNotifier());
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -65,7 +49,7 @@ class HomePage extends ConsumerWidget {
           ),
           ElevatedButton(
               onPressed: ref.read(counterProvider.notifier).increment,
-              child: Text("press to Increment"))
+              child: const Text("press to Increment"))
         ],
       ),
     );
